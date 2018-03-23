@@ -18,8 +18,9 @@ cache:
  - $HOME/.gradle/wrapper/
 
 env:
-  matrix:
-    - API=android-22 ABI=armeabi-v7a
+   global:
+    - EMULATOR_API=21
+    - ADB_INSTALL_TIMEOUT=5 # minutes
 
 
 android:
@@ -59,14 +60,14 @@ before_install:
 
 before_script:
 # - android list sdk --extended --no-ui --all
- #- echo no | android create avd --force --name test --target android-27 --abi armeabi-v7a
+# - echo no | android create avd --force --name test --target android-21 --abi armeabi-v7a
 # - echo "n" | android create avd --name myandroid25 -t "android-25"
  - android list targets
  #- echo no | android create avd --force -n test -t android-25
 # - emulator -avd test -no-skin -no-audio -no-window &
  #- android-wait-for-emulator
 # - adb shell input keyevent 82 &
-script: "./gradlew assembleDebug && ./gradlew lintDebug &&./gradlew testDebug && ./gradlew connectedCheck"
+script: "./gradlew assembleDebug && ./gradlew lintDebug &&./gradlew testDebug"
 
 after_success:
    - ./gradlew jacocoTestReport coveralls
