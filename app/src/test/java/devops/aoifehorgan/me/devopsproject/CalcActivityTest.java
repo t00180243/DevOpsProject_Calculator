@@ -3,10 +3,8 @@ package devops.aoifehorgan.me.devopsproject;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class CalcActivityTest {
-    @Test
-    public void onCreate() throws Exception {
-    }
+public class CalcActivityTest{
+
 
     @Test
     public void addC() throws Exception {

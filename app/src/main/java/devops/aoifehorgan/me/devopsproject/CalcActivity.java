@@ -22,7 +22,7 @@ public class CalcActivity extends AppCompatActivity {
     Button one, two, three, four, five, six, seven, eight, nine, point, zero ;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         //code for hide title bar.
