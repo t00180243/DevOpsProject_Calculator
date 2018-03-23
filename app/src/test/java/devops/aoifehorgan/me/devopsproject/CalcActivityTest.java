@@ -10,7 +10,10 @@ public class CalcActivityTest {
 
     @Test
     public void addC() throws Exception {
-        assertEquals(4,2+2);
+        float actual = CalcActivity.addC(2,2);
+        float expected = 4;
+
+        assertEquals("Correct",expected,actual,0.001);
     }
 
     @Test
