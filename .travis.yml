@@ -65,6 +65,7 @@ before_script:
 script: "./gradlew assembleDebug && ./gradlew lintDebug &&./gradlew testDebug"
 after_success:
    - ./gradlew jacocoTestReport coveralls
+   - codecov
 
 
 
