@@ -62,7 +62,6 @@ public class CalcActivity extends AppCompatActivity {
             }
         });
 
-
         bracket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -279,6 +278,10 @@ public class CalcActivity extends AppCompatActivity {
     public static float multiplyC(float a, float b){
         return a*b;
     }
+
+
+
+
 
 
 }

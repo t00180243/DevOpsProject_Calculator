@@ -1,13 +1,18 @@
 package devops.aoifehorgan.me.devopsproject;
 
+import android.widget.Button;
+
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+
 import static org.junit.Assert.*;
 
 public class CalcActivityTest{
 
-
     @Test
     public void addC() throws Exception {
+
         float actual = CalcActivity.addC(2,2);
         float expected = 4;
 
@@ -34,5 +39,6 @@ public class CalcActivityTest{
         float expected = 10;
         assertEquals("Failed",expected,actual,0.001);
     }
+
 
 }
