@@ -18,17 +18,23 @@ public class CalcActivityTest {
 
     @Test
     public void subtract() throws Exception {
-        assertEquals(2,4-2);
+        float actual = CalcActivity.subtractC(3,1);
+        float expected = 2;
+        assertEquals("Correct",expected,actual,0.001);
     }
 
     @Test
     public void divide() throws Exception {
-        assertEquals(2,4/2);
+        float actual = CalcActivity.divideC(4,2);
+        float expected = 2;
+        assertEquals("Correct",expected,actual,0.001);
     }
 
     @Test
     public void multiply() throws Exception {
-        assertEquals(4,2*2);
+        float actual = CalcActivity.multiplyC(5,2);
+        float expected = 10;
+        assertEquals("Correct",expected,actual,0.001);
     }
 
 }

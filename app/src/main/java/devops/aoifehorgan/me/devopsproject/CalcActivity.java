@@ -11,7 +11,8 @@ import android.widget.TextView;
 
 
 public class CalcActivity extends AppCompatActivity {
-    enum Operation {addition, minus, multiply, divide};
+    enum Operation {addition, minus, multiply, divide}
+
     Operation operation = Operation.addition;
     float storedValue=0;
     TextView textView;
@@ -29,29 +30,29 @@ public class CalcActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_calc);
 
-        textView = (TextView)findViewById(R.id.textView1);
+        textView = findViewById(R.id.textView1);
 
-        clear = (Button)findViewById(R.id.buttonClearText);
-        bracket = (Button)findViewById(R.id.buttonBracket);
-        percentage = (Button)findViewById(R.id.buttonPercentage);
-        divide = (Button)findViewById(R.id.buttonDivide);
-        add = (Button)findViewById(R.id.buttonAdd);
-        subtract = (Button)findViewById(R.id.buttonSubtraction);
-        multiply = (Button)findViewById(R.id.buttonMultiply);
-        equal = (Button)findViewById(R.id.buttonEqual);
-        minusValue = (Button)findViewById(R.id.buttonMinusValue);
+        clear = findViewById(R.id.buttonClearText);
+        bracket = findViewById(R.id.buttonBracket);
+        percentage = findViewById(R.id.buttonPercentage);
+        divide = findViewById(R.id.buttonDivide);
+        add = findViewById(R.id.buttonAdd);
+        subtract = findViewById(R.id.buttonSubtraction);
+        multiply = findViewById(R.id.buttonMultiply);
+        equal = findViewById(R.id.buttonEqual);
+        minusValue = findViewById(R.id.buttonMinusValue);
 
-        one = (Button)findViewById(R.id.button1);
-        two = (Button)findViewById(R.id.button2);
-        three = (Button)findViewById(R.id.button3);
-        four = (Button)findViewById(R.id.button4);
-        five = (Button)findViewById(R.id.button5);
-        six = (Button)findViewById(R.id.button6);
-        seven = (Button)findViewById(R.id.button7);
-        eight = (Button)findViewById(R.id.button8);
-        nine = (Button)findViewById(R.id.button9);
-        point = (Button)findViewById(R.id.buttonPoint);
-        zero = (Button)findViewById(R.id.buttonZero);
+        one = findViewById(R.id.button1);
+        two = findViewById(R.id.button2);
+        three = findViewById(R.id.button3);
+        four = findViewById(R.id.button4);
+        five = findViewById(R.id.button5);
+        six = findViewById(R.id.button6);
+        seven = findViewById(R.id.button7);
+        eight = findViewById(R.id.button8);
+        nine = findViewById(R.id.button9);
+        point = findViewById(R.id.buttonPoint);
+        zero = findViewById(R.id.buttonZero);
 
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,8 +75,9 @@ public class CalcActivity extends AppCompatActivity {
         percentage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String s = textView.getText() + "%";
 
-                textView.setText(textView.getText() + "%");
+                textView.setText(s);
 
             }
         });
@@ -84,8 +86,9 @@ public class CalcActivity extends AppCompatActivity {
         divide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String s = textView.getText() + "/";
 
-                textView.setText(textView.getText() + "/");
+                textView.setText(s);
 
             }
         });
@@ -94,8 +97,9 @@ public class CalcActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String s = textView.getText() + "+";
 
-                textView.setText(textView.getText() + "+");
+                textView.setText(s);
                 operation = Operation.addition;
 
             }
@@ -105,8 +109,9 @@ public class CalcActivity extends AppCompatActivity {
         subtract.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String s = textView.getText() + "-";
 
-                textView.setText(textView.getText() + "-");
+                textView.setText(s);
 
             }
         });
@@ -115,8 +120,8 @@ public class CalcActivity extends AppCompatActivity {
         multiply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                textView.setText(textView.getText() + "*");
+                String s = textView.getText() + "*";
+                textView.setText(s);
 
             }
         });
@@ -127,7 +132,20 @@ public class CalcActivity extends AppCompatActivity {
             public void onClick(View view) {
                 switch (operation) {
                     case addition:
-                    textView.setText(""+addC(storedValue,storedValue));
+                        String s = ""+addC(storedValue,storedValue);
+                    textView.setText(s);
+
+                    case minus:
+                        String sub = ""+subtractC(storedValue,storedValue);
+                        textView.setText(sub);
+
+                    case multiply:
+                        String mul = ""+multiplyC(storedValue,storedValue);
+                        textView.setText(mul);
+
+                    case divide:
+                        String div = ""+divideC(storedValue,storedValue);
+                        textView.setText(div);
                 }
 
 
@@ -145,8 +163,8 @@ public class CalcActivity extends AppCompatActivity {
         one.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                textView.setText(textView.getText() + "1");
+                String s = textView.getText() + "1";
+                textView.setText(s);
                 storedValue =1;
 
             }
@@ -155,8 +173,8 @@ public class CalcActivity extends AppCompatActivity {
         two.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                textView.setText(textView.getText() + "2");
+                String s = textView.getText() + "2";
+                textView.setText(s);
                 storedValue =2;
             }
         });
@@ -164,8 +182,8 @@ public class CalcActivity extends AppCompatActivity {
         three.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                textView.setText(textView.getText() + "3");
+                String s = textView.getText() + "3";
+                textView.setText(s);
 
             }
         });
@@ -173,8 +191,8 @@ public class CalcActivity extends AppCompatActivity {
         four.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                textView.setText(textView.getText() + "4");
+                String s = textView.getText() + "4";
+                textView.setText(s);
 
             }
         });
@@ -182,8 +200,8 @@ public class CalcActivity extends AppCompatActivity {
         five.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                textView.setText(textView.getText() + "5");
+                String s = textView.getText() + "5";
+                textView.setText(s);
 
             }
         });
@@ -192,8 +210,8 @@ public class CalcActivity extends AppCompatActivity {
         six.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                textView.setText(textView.getText() + "6");
+                String s = textView.getText() + "6";
+                textView.setText(s);
 
             }
         });
@@ -202,8 +220,8 @@ public class CalcActivity extends AppCompatActivity {
         seven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                textView.setText(textView.getText() + "7");
+                String s = textView.getText() + "7";
+                textView.setText(s);
 
             }
         });
@@ -211,8 +229,8 @@ public class CalcActivity extends AppCompatActivity {
         eight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                textView.setText(textView.getText() + "8");
+                String s = textView.getText() + "8";
+                textView.setText(s);
 
             }
         });
@@ -220,8 +238,8 @@ public class CalcActivity extends AppCompatActivity {
         nine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                textView.setText(textView.getText() + "9");
+                String s = textView.getText() + "9";
+                textView.setText(s);
 
             }
         });
@@ -229,8 +247,8 @@ public class CalcActivity extends AppCompatActivity {
         point.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                textView.setText(textView.getText() + ".");
+                String s = textView.getText() + ".";
+                textView.setText(s);
 
             }
         });
@@ -238,8 +256,8 @@ public class CalcActivity extends AppCompatActivity {
         zero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                textView.setText(textView.getText() + "0");
+                String s = textView.getText() + "0";
+                textView.setText(s);
 
             }
         });
@@ -250,23 +268,15 @@ public class CalcActivity extends AppCompatActivity {
         return a+b;
     }
 
-    public static int subtract(int a, int b){
+    public static float subtractC(float a, float b){
         return a-b;
     }
 
-    public static String divide(int a, int b){
-        if(a==0 && b==0){
-            return "NOT DEFINED";
-        }
-        else if(b==0){
-            return "INFINITY";
-        }
-        else {
-            return String.valueOf(a/b);
-        }
+    public static float divideC(float a, float b){
+        return b/a;
     }
 
-    public static int multiply(int a, int b){
+    public static float multiplyC(float a, float b){
         return a*b;
     }
 
