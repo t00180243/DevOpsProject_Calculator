@@ -32,7 +32,7 @@ android:
      - build-tools-27.0.3
 
      - android-27
-
+     - sys-img-armeabi-v7a-android-27
      - android-$EMULATOR_API_LEVEL
 
      - extra-google-m2repository
