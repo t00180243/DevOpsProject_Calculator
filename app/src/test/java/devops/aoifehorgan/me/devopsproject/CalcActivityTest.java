@@ -1,12 +1,8 @@
 package devops.aoifehorgan.me.devopsproject;
 
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 
-/**
- * Created by Aoife Horgan on 22/03/2018.
- */
 public class CalcActivityTest {
     @Test
     public void onCreate() throws Exception {
@@ -19,14 +15,17 @@ public class CalcActivityTest {
 
     @Test
     public void subtract() throws Exception {
+        assertEquals(2,4-2);
     }
 
     @Test
     public void divide() throws Exception {
+        assertEquals(2,4/2);
     }
 
     @Test
     public void multiply() throws Exception {
+        assertEquals(4,2*2);
     }
 
 }

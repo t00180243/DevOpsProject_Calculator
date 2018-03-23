@@ -51,6 +51,7 @@ before_install:
   - mkdir "$ANDROID_HOME/licenses" || true
   - chmod +x gradlew
   - ./gradlew dependencies || true
+  - pip install --user codecov
 
 before_script:
 # - android list sdk --extended --no-ui --all
