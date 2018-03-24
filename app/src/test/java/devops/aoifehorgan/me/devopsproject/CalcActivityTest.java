@@ -39,6 +39,10 @@ public class CalcActivityTest{
         float expected = 10;
         assertEquals("Failed",expected,actual,0.001);
     }
+    @Test
+    public void checkButton(){
+
+    }
 
 
 }
