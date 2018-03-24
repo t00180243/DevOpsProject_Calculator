@@ -61,8 +61,9 @@ before_script:
 # - android list sdk --extended --no-ui --all
 # - echo no | android create avd --force --name test --target android-21 --abi armeabi-v7a
 # - echo "n" | android create avd --name myandroid25 -t "android-25"
- - android list targets
  - echo "y" | android update sdk -a --no-ui --filter sys-img-armeabi-v7a-android-27,sys-img-x86_64-android-27
+ - android list targets
+
  #- echo no | android create avd --force -n test -t android-25
 # - emulator -avd test -no-skin -no-audio -no-window &
  #- android-wait-for-emulator
