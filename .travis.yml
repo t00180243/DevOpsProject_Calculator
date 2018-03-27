@@ -59,6 +59,7 @@ before_install:
   - pip install --user codecov
 
 addons:
+  sonarqube: true
   sonarcloud:
       organization: "t00180243-github"
       token:
@@ -79,12 +80,13 @@ before_script:
 # - adb shell input keyevent 82 &
 script:
  - "./gradlew assembleDebug && ./gradlew lintDebug &&./gradlew testDebug"
- - sonar-scanner
+
 
 
 after_success:
    - ./gradlew jacocoTestReport coveralls
    - codecov
+    - sonar-scanner
 
 
 

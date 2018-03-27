@@ -69,6 +69,7 @@ task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest']) {
 
 sonarqube{
     properties{
+        //def libraries = project.android.sdkDirectory.getPath() + "/platforms/android-26/android.jar"/* + ", build/intermediates/exploded-aar*//**//*classes.jar"*/
         property "sonar.projectName", "DevOpsProject_Calculator"
         property "sonar.projectKey", "devops.aoifehorgan.me.devopsproject"
         property "sonar.host.url", "https://sonarcloud.io"
