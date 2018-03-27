@@ -86,7 +86,7 @@ script:
 after_success:
    - ./gradlew jacocoTestReport coveralls
    - codecov
-    - sonar-scanner
+   - sonar-scanner
 
 
 
