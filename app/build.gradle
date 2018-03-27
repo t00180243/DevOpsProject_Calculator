@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'jacoco'
 apply plugin: 'com.github.kt3k.coveralls'
+apply plugin: 'org.sonarqube'
 
 android {
     compileSdkVersion 26
@@ -63,5 +64,14 @@ task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest']) {
     doLast {
         println "coveralls report has been generated to file://${buildDir}/reports/jacoco/test/jacocoTestReport.xml"
         println "coverage report generated at file://${reports.html.destination}/index.html"
+    }
+}
+
+sonarqube{
+    properties{
+        property "sonar.projectName", "DevOpsProject_Calculator"
+        property "sonar.host.url", "https://sonarcloud.io"
+        property "sonar.organization", "t00180243-github"
+        property "sonar.login", "997c8e9fb9b2709d2007f80119950ddca7071034"
     }
 }
