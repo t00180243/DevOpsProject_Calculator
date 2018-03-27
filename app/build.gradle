@@ -70,8 +70,10 @@ task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest']) {
 sonarqube{
     properties{
         property "sonar.projectName", "DevOpsProject_Calculator"
+        property "sonar.projectKey", "devops.aoifehorgan.me.devopsproject"
         property "sonar.host.url", "https://sonarcloud.io"
         property "sonar.organization", "t00180243-github"
+        property "sonar.sources", "src/main/java"
         property "sonar.login", "997c8e9fb9b2709d2007f80119950ddca7071034"
     }
 }
