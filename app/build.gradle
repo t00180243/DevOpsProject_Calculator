@@ -71,7 +71,7 @@ sonarqube{
     properties{
         //def libraries = project.android.sdkDirectory.getPath() + "/platforms/android-26/android.jar"/* + ", build/intermediates/exploded-aar*//**//*classes.jar"*/
         property "sonar.projectName", "DevOpsProject_Calculator"
-        property "sonar.projectKey", "devops.aoifehorgan.me.devopsproject"
+        property "sonar.projectKey", "devopsProject12"
         property "sonar.host.url", "https://sonarcloud.io"
         property "sonar.organization", "t00180243-github"
         property "sonar.sources", "src/main/java"

@@ -59,7 +59,6 @@ before_install:
   - pip install --user codecov
 
 addons:
-  sonarqube: true
   sonarcloud:
       organization: "t00180243-github"
       token:
