@@ -96,10 +96,9 @@ after_success:
  # app: devops-project
 deploy:
   provider: releases
-  api_key:
-      secure: X9fnLUh/qKVwtDOFicmHBZN3r0sEnM3kp4st/vjRCuDgTV30pG/0y3kjnbSuRm/Qgw8sgvzD5RlGQ7aHiU6naJnlrAbBeHVs3EECMvRc2zZjeUGCg4Iwtd0rPnvl2X28jOFTOeOM24FP6cqhVK/keilLcTCjB4llTYjbV4FkIqo=
-    file: app/build/outputs/apk/app-release.apk
-    skip_cleanup: true
+  api_key: X9fnLUh/qKVwtDOFicmHBZN3r0sEnM3kp4st/vjRCuDgTV30pG/0y3kjnbSuRm/Qgw8sgvzD5RlGQ7aHiU6naJnlrAbBeHVs3EECMvRc2zZjeUGCg4Iwtd0rPnvl2X28jOFTOeOM24FP6cqhVK/keilLcTCjB4llTYjbV4FkIqo=
+  file: app/build/outputs/apk/app-release.apk
+  skip_cleanup: true
     on:
       repo: larsgrefer/bpm-meter-android
       tags: true
