@@ -7,7 +7,14 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.2"
 
-
+    signingConfigs {
+        release {
+            storeFile file("release.keystore")
+            storePassword "Fifi111222333"
+            keyAlias "MyAndroidKey"
+            keyPassword "Fifi12345"
+        }
+    }
     defaultConfig {
         applicationId "devops.aoifehorgan.me.devopsproject"
         minSdkVersion 21
@@ -22,6 +29,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     testOptions.unitTests.all {
