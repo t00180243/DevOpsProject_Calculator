@@ -88,14 +88,10 @@ after_success:
    - sonar-scanner
 
 
-before_deploy:
-- openssl aes-256-cbc -K $encrypted_657e27e4d3ee_key -iv $encrypted_657e27e4d3ee_iv -in keystore.jks.enc -out keystore.jks -d
-- cd app/build/outputs/apk/release
-- jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ${TRAVIS_BUILD_DIR}/keystore.jks -storepass $storepass -keypass $keypass app-release-unsigned.apk key0
-- jarsigner -verify app-release-unsigned.apk
-- "${ANDROID_HOME}/build-tools/${ANDROID_BUILD_TOOLS}/zipalign -v 4 app-release-unsigned.apk TravisAndroid.apk"
-- cd -
-- scripts/tag.sh
+deploy:
+  provider: heroku
+  api_key:
+    secure: "857edf88-dfd7-4295-88f7-4169874c19a4"
 
 
 
